@@ -57,6 +57,19 @@ O programa apresenta um menu interativo:
 
 O sistema permanece em execução até o usuário escolher sair.
 
+/////////
+Exemplo de uso
+
+Digite a placa:
+ABC1234
+
+=== VEICULO ENCONTRADO ===
+Modelo: Gol
+Ano: 2010
+...
+/////////
+
+
  Tratamento de Dados
 Uso de fgets para leitura segura de strings
 Remoção do \n com strcspn
