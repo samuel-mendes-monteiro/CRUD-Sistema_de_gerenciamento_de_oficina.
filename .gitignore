@@ -1,0 +1,8 @@
+# executáveis
+*.exe
+*.out
+sis
+
+# arquivos temporários
+*.o
+*.log
