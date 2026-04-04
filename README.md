@@ -1,98 +1,63 @@
- Sistema de Gestão de Veículos em C
- Descrição:
+Sistema de Gestão de Veículos (C)
+Descrição
 
-Este projeto é um sistema simples de gestão de veículos desenvolvido em linguagem C.
-Ele permite cadastrar, buscar e remover veículos utilizando armazenamento em arquivo texto, simulando um banco de dados.
+Este projeto é um sistema simples de gerenciamento de veículos desenvolvido em linguagem C. Ele permite cadastrar, buscar, editar, remover e listar veículos utilizando armazenamento em arquivo texto.
 
-O sistema segue o conceito de CRUD (Create, Read, Update, Delete), sendo um projeto voltado para prática de lógica de programação e manipulação de arquivos.
-
--Funcionalidades-
- Adicionar veículo
-Cadastro de modelo, ano, placa, status de troca de óleo e quilometragem
- Pesquisar veículo
-Busca por placa
-Exibe todas as informações do veículo
- Remover veículo
-Exclusão baseada na placa
-Utiliza arquivo temporário para reescrita dos dados
- Atualização do status do veiculo
-Atualiza o veiculo na oficina
- Sair do sistema
-Encerramento controlado do programa
-
-
- Estrutura do Projeto
-
-O sistema utiliza uma estrutura (struct) para representar os veículos:
-
-typedef struct {
-    char modelo[50];
-    int ano;
-    char placa[15];
-    int trocaoleo;
-    int km_ultimarev;
-    int km_atual;
-} Veiculo;
- Armazenamento
-
-Os dados são armazenados no arquivo:
+Os dados são persistidos em um arquivo chamado:
 
 banco-de-dados-oficina.txt
+Funcionalidades
 
-Cada linha representa um veículo, com os dados separados por espaço.
+O sistema possui as seguintes opções no menu:
 
- Tecnologias Utilizadas
-Linguagem C
-Biblioteca padrão (stdio.h, string.h, time.h, ctype.h)
-Manipulação de arquivos (FILE, fopen, fprintf, fscanf)
- Funcionamento
+Pesquisar veículo
+Busca um veículo pela placa.
+Editar veículo
+Permite atualizar os dados de um veículo existente.
+Adicionar veículo
+Cadastra um novo veículo no sistema.
+Remover veículo
+Remove um veículo a partir da placa.
+Listar veículos
+Exibe todos os veículos cadastrados.
+Sair
+Encerra o programa.
+Estrutura dos Dados
 
-O programa apresenta um menu interativo:
+Cada veículo possui os seguintes atributos:
 
-1 - Pesquisar veiculo
-2 - Editar status de veiculo
-3 - Adicionar veiculo
-4 - Remover veiculo
-0 - Sair
+Modelo (string)
+Ano (int)
+Placa (string)
+Troca de óleo (int: 0 ou 1)
+KM da última revisão (int)
+KM atual (int)
 
-O sistema permanece em execução até o usuário escolher sair.
+Os dados são armazenados no arquivo em formato texto, separados por espaço:
 
-/////////
-Exemplo de uso
+modelo ano placa trocaoleo km_ultimarev km_atual
 
-Digite a placa:
-ABC1234
+Exemplo:
 
-=== VEICULO ENCONTRADO ===
-Modelo: Gol
-Ano: 2010
-...
-/////////
+CIVIC_2020 2020 ABC1234 1 10000 21000
+Como Compilar
 
+Use um compilador C como o GCC:
 
- Tratamento de Dados
-Uso de fgets para leitura segura de strings
-Remoção do \n com strcspn
-Padronização de placas em letras maiúsculas (toupper)
-Comparação de strings com strcmp
-▶ Como executar
-1. Compilar
-gcc main.c -o sistema
-2. Executar
-./sistema
- Conceitos Praticados
-Estruturas (struct)
-Manipulação de arquivos
-Strings em C
-Controle de fluxo (switch, do-while)
-Funções
-Entrada e saída de dados
-CRUD básico
+gcc main.c -o programa
+Como Executar
 
+Após compilar:
 
-
-Desenvolvido por Samuel Mendes
-
-📌 Observação
-
-Este projeto foi desenvolvido com foco educacional, visando reforçar conceitos fundamentais da linguagem C e servir como base para projetos mais avançados.
+./programa
+Observações
+O modelo do carro tem espaços substituídos por underscore (_) para facilitar leitura no arquivo.
+A placa é convertida automaticamente para letras maiúsculas.
+O sistema utiliza um arquivo temporário (temp.txt) para operações de edição e remoção.
+O programa faz uso de leitura com fscanf, portanto o formato do arquivo deve ser respeitado.
+Possíveis Melhorias
+Validação de entrada de dados
+Interface mais amigável
+Uso de arquivos binários para maior eficiência
+Sistema de busca por outros campos (modelo, ano, etc.)
+Ordenação dos veículos
