@@ -89,7 +89,7 @@ Funções
 Entrada e saída de dados
 CRUD básico
 
- Autor
+
 
 Desenvolvido por Samuel Mendes
 
