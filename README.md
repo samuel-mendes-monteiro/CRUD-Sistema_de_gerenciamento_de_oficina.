@@ -1,63 +1,75 @@
 Sistema de Gestão de Veículos (C)
-Descrição
 
-Este projeto é um sistema simples de gerenciamento de veículos desenvolvido em linguagem C. Ele permite cadastrar, buscar, editar, remover e listar veículos utilizando armazenamento em arquivo texto.
+Este projeto é um sistema simples de gerenciamento de veículos desenvolvido em linguagem C. Ele permite cadastrar, consultar, editar, remover e listar veículos, utilizando armazenamento em arquivo .txt.
 
-Os dados são persistidos em um arquivo chamado:
-
-banco-de-dados-oficina.txt
 Funcionalidades
 
-O sistema possui as seguintes opções no menu:
+O sistema oferece as seguintes operações:
 
-Pesquisar veículo
-Busca um veículo pela placa.
-Editar veículo
-Permite atualizar os dados de um veículo existente.
-Adicionar veículo
-Cadastra um novo veículo no sistema.
+Pesquisar veículo por placa
+Editar informações de um veículo
+Adicionar novo veículo
 Remover veículo
-Remove um veículo a partir da placa.
-Listar veículos
-Exibe todos os veículos cadastrados.
-Sair
-Encerra o programa.
-Estrutura dos Dados
+Listar todos os veículos cadastrados
+Estrutura do Projeto
+.
+├── main.c
+├── functions.c
+├── functions.h
+├── banco-de-dados-oficina.txt
+└── README.md
+main.c → Controle principal do programa (menu e fluxo)
+functions.c → Implementação das funções
+functions.h → Declaração das funções e estrutura Veiculo
+banco-de-dados-oficina.txt → Arquivo onde os dados são armazenados
+Estrutura de Dados
 
-Cada veículo possui os seguintes atributos:
+Cada veículo é representado pela struct:
 
-Modelo (string)
-Ano (int)
-Placa (string)
-Troca de óleo (int: 0 ou 1)
-KM da última revisão (int)
-KM atual (int)
+typedef struct {
+    char modelo[50];
+    int ano;
+    char placa[15];
+    int trocaoleo;
+    int km_ultimarev;
+    int km_atual;
+} Veiculo;
+Como Compilar
 
-Os dados são armazenados no arquivo em formato texto, separados por espaço:
+Use o GCC para compilar o projeto:
+
+gcc main.c functions.c -o programa
+Como Executar
+
+Após compilar:
+
+./programa
+Armazenamento de Dados
+
+Os dados são armazenados no arquivo:
+
+banco-de-dados-oficina.txt
+
+Formato de cada linha:
 
 modelo ano placa trocaoleo km_ultimarev km_atual
 
 Exemplo:
 
 CIVIC_2020 2020 ABC1234 1 10000 21000
-Como Compilar
-
-Use um compilador C como o GCC:
-
-gcc main.c -o programa
-Como Executar
-
-Após compilar:
-
-./programa
 Observações
-O modelo do carro tem espaços substituídos por underscore (_) para facilitar leitura no arquivo.
-A placa é convertida automaticamente para letras maiúsculas.
-O sistema utiliza um arquivo temporário (temp.txt) para operações de edição e remoção.
-O programa faz uso de leitura com fscanf, portanto o formato do arquivo deve ser respeitado.
+O modelo do carro não pode conter espaços (eles são convertidos para _)
+A placa é automaticamente convertida para letras maiúsculas
+O sistema utiliza um arquivo temporário (temp.txt) para operações de edição e remoção
+Recomenda-se não editar o arquivo manualmente para evitar inconsistências
 Possíveis Melhorias
-Validação de entrada de dados
-Interface mais amigável
-Uso de arquivos binários para maior eficiência
-Sistema de busca por outros campos (modelo, ano, etc.)
-Ordenação dos veículos
+Interface gráfica
+Validação mais robusta de entrada
+Suporte a múltiplos usuários
+Banco de dados (SQLite, por exemplo)
+Melhor tratamento de erros
+
+
+Autor
+
+Samuel Mendes
