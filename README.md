@@ -4,6 +4,7 @@ Sistema de Gestão de Veículos / Vehicle Management System (C)
 
 
 ### Português
+
 Visão Geral
 
 Este projeto é um sistema simples de gerenciamento de veículos desenvolvido em C. Ele permite cadastrar, consultar, editar, remover e listar veículos utilizando um arquivo .txt como armazenamento.
@@ -15,12 +16,14 @@ Adicionar novo veículo
 Remover veículo
 Listar todos os veículos cadastrados
 Estrutura do Projeto
+
 .
 ├── main.c
 ├── functions.c
 ├── functions.h
 ├── banco-de-dados-oficina.txt
 └── README.md
+
 main.c → Controle principal do programa (menu e fluxo)
 functions.c → Implementação das funções
 functions.h → Declaração das funções e estrutura Veiculo
@@ -54,7 +57,9 @@ modelo ano placa trocaoleo km_ultimarev km_atual
 Exemplo:
 
 CIVIC_2020 2020 ABC1234 1 10000 21000
-Observações
+
+
+Observações:
 O modelo do carro não pode conter espaços (eles são convertidos para _)
 A placa é automaticamente convertida para letras maiúsculas
 O sistema utiliza um arquivo temporário (temp.txt) para edição e remoção
@@ -122,7 +127,9 @@ modelo ano placa trocaoleo km_ultimarev km_atual
 Example:
 
 CIVIC_2020 2020 ABC1234 1 10000 21000
-Notes
+
+Notes:
+
 Car model names cannot contain spaces (spaces are replaced with _)
 License plates are automatically converted to uppercase
 A temporary file (temp.txt) is used for editing and removing records
