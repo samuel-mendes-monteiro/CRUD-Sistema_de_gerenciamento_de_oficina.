@@ -1,5 +1,6 @@
 #include "functions.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 #include <string.h>
 #include <ctype.h>
@@ -40,6 +41,8 @@ int main(){
         default:
             printf("Opcao invalida\n");
         }
+        
+        ordenarveiculos();
 
         printf("Pressione ENTER para continuar\n");
 

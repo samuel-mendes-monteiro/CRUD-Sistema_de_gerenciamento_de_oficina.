@@ -56,7 +56,7 @@ modelo ano placa trocaoleo km_ultimarev km_atual
 
 Exemplo:
 
-CIVIC_2020 2020 ABC1234 1 10000 21000
+VW_POLO 2019 PBH9507 0 92000 94000
 
 
 Observações:

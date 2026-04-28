@@ -27,6 +27,8 @@ void pesquisarveiculo();
 void removerveiculo();
 void editarveiculo();
 void listarveiculos();
+void ordenarveiculos();
+int compararKm(const void *a, const void *b);
 
 
 

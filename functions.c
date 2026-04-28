@@ -1,5 +1,6 @@
 #include "functions.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 #include <string.h>
 #include <ctype.h>
@@ -316,3 +317,48 @@ void listarveiculos(){
     fclose(F);
 }
 
+///ORDENA VEICULOS NO ARQUIVO TXT
+
+void ordenarveiculos(){
+
+    FILE* F = fopen("banco-de-dados-oficina.txt","r");
+
+    
+    if (F == NULL){
+    printf("Erro ao abrir arquivo.\n");
+    return;
+    }
+
+    int total = 0;
+    Veiculo lista[100];
+
+    while (scanveiculos(F, &lista[total])!= EOF && total < 100)
+    {
+        total++;
+    }
+
+    if (total == 0) {
+        printf("Nenhum veículo para ordenar.\n");
+        return;
+    }
+
+    fclose(F);
+
+    F = fopen("banco-de-dados-oficina.txt","w");
+
+    qsort(lista, total, sizeof(Veiculo), compararKm);
+
+    for (int i = 0; i < total; i++){salvarveiculo(F,lista[i]);}
+
+    fclose(F);
+
+
+}
+
+/// COMPARA PARA ORDENAR VEICULOS
+int compararKm(const void *a, const void *b){
+
+    return ((Veiculo*)a)->km_atual - ((Veiculo*)b)->km_atual;
+
+
+}
