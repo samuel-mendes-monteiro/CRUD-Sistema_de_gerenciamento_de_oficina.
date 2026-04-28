@@ -7,7 +7,7 @@ Sistema de Gestão de Veículos / Vehicle Management System (C)
 
 Visão Geral
 
-Este projeto é um sistema simples de gerenciamento de veículos desenvolvido em C. Ele permite cadastrar, consultar, editar, remover e listar veículos utilizando um arquivo .txt como armazenamento.
+Este projeto é um sistema simples de gerenciamento de veículos desenvolvido em C. Ele permite cadastrar, consultar, editar, remover e listar veículos utilizando um arquivo .txt como armazenamento (CRUD) .
 
 Funcionalidades
 Pesquisar veículo por placa
